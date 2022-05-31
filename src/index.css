@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+.bm-burger-button {
+    position: absolute;
+    width: 36px;
+    height: 30px;
+    left: 20px;
+    top: 20px;
+  }
+  
+  .bm-burger-bars {
+    background: #373a47;
+  }
+
+  .bm-burger-bars-hover {
+    background: #a90000;
+  }
+
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  
+
+  .bm-menu {
+    background: #f1f5f9;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    margin: -0.7rem;
+  }
+  
+
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+
+
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
