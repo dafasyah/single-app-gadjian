@@ -1,7 +1,7 @@
 {
   "name": "gadjian-technical-test",
   "version": "0.1.0",
-  "homepage": "https://dafasyah.github.io/single-page-application-gadjian",
+  "homepage": "https://dafasyah.github.io/single-page-app-gadjian",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
