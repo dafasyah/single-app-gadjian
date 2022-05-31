@@ -15,9 +15,10 @@ const PersonelList = () => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:8000/results").then(res => {
-            return res.json();
+        fetch("https://randomuser.me/api/?results=28").then(res => {
+            res.json();
         }).then(data => {
+            console.log(data)
             setPersonel(data);
         })
     }, []);
