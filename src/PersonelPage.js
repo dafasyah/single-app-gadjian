@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+// import axios from 'axios';
 
 const PersonelList = () => {
     const [personel, setPersonel] = useState([]);
@@ -14,13 +15,29 @@ const PersonelList = () => {
         setPageNum(selected);
     }
 
+    // const fetchPersonel = async () => {
+    //     try {
+    //         let resp = await axios.get("https://randomuser.me/api/?results=28")
+    //         setPersonel(resp.data.data)
+    //     } catch (error) {
+            
+    //     }
+    // }
+
+    // useEffect(() => {
+    //    fetchPersonel();
+    //   }, [])
+
     useEffect(() => {
-        fetch("https://randomuser.me/api/?results=28").then(res => {
-            res.json();
-        }).then(data => {
-            console.log(data)
-            setPersonel(data);
-        })
+     
+             fetch("http://localhost:8000/results").then(res => {
+                return res.json();
+            }).then(data => {
+                console.log(data);
+                setPersonel(data);
+            })
+       
+      
     }, []);
     return (
         <div className="personel-list container bg-slate-200 p-5 sm:max-w-none sm:w-full">
@@ -46,7 +63,8 @@ const PersonelList = () => {
 
             </div>
             <div className="personel-list-tab grid grid-cols-4 my-8 gap-4 sm:block">
-                {personel.slice(pagesVisited, pagesVisited + personelPerPage).map((person, p) =>
+                
+                { personel.slice(pagesVisited, pagesVisited + personelPerPage).map((person, p) =>
                     <div className="personel-details px-3 py-2 bg-white rounded sm:my-5 " key={p}>
                         <h1 className="pb-2">Personel ID: <span className="text-custom-green">{person.id.name != null ? person.id.name : "-"}</span></h1>
                         <div className="flex flex-col sm:grid sm:grid-rows-3 sm:grid-flow-col">
@@ -89,7 +107,7 @@ const PersonelList = () => {
             />
 
         </div>
-        
+
     );
 }
 
